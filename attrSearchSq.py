@@ -21,3 +21,4 @@ class E(B, D):
 if __name__ == '__main__':
     e = E()
     e.method()
+    print('modified in github')
