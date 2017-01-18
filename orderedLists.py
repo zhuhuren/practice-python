@@ -4,6 +4,8 @@ class Node:
         self.next = None
     def __ge__(self, other):
         return self.data >= other.data
+    def __eq__(self, other):
+        return self.data = other.data
     def getData(self):
         return self.data
     def getNext(self):
@@ -153,14 +155,12 @@ if __name__ == '__main__':
     print(olist)
     olist.pop()
     print(olist)
-    olist.pop(40)
+    olist.pop()
     print(olist)
-    olist.pop(60)
+    olist.pop()
     print(olist)
-    olist.add(80)
+    olist.pop()
     print(olist)
-    olist.add(5)
-    print(olist)
-    olist.add(3)
+    olist.pop()
     print(olist)
 
