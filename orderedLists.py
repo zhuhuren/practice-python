@@ -159,7 +159,7 @@ if __name__ == '__main__':
     print(olist)
     olist.pop()
     print(olist)
-    olist.pop()
+    olist.add(5)
     print(olist)
     olist.add(3)
     print(olist)
