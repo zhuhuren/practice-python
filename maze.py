@@ -27,15 +27,15 @@ class Maze:
 
         self.rowsInMaze = rowsInMaze
         self.columnsInMaze = columnsInMaze
-        self.xTranslate = -columnsInMaze/2
-        self.yTranslate = rowsInMaze/2
+        self.xTranslate = -columnsInMaze/2 + 0.5
+        self.yTranslate = rowsInMaze/2 - 0.5
         self.t = turtle.Turtle()
         self.t.shape('turtle')
         self.wn = turtle.Screen()
-        self.wn.setworldcoordinates(-(columnsInMaze-1)/2-.5,-(rowsInMaze-1)/2-.5,(columnsInMaze-1)/2+.5,(rowsInMaze-1)/2+.5)
+        self.wn.setworldcoordinates(-columnsInMaze/2,-rowsInMaze/2,columnsInMaze/2,rowsInMaze/2)
 
     def drawMaze(self):
-        self.t.speed(10)
+        self.t.speed(1)
         self.wn.tracer(0)
         for y in range(self.rowsInMaze):
             for x in range(self.columnsInMaze):
@@ -60,7 +60,7 @@ class Maze:
         self.t.end_fill()
 
     def moveTurtle(self,x,y):
-        self.t.up()
+        self.t.up()       
         self.t.setheading(self.t.towards(x+self.xTranslate,-y+self.yTranslate))
         self.t.goto(x+self.xTranslate,-y+self.yTranslate)
 
@@ -75,7 +75,7 @@ class Maze:
         if val == PART_OF_PATH:
             color = 'green'
         elif val == OBSTACLE:
-            color = 'red'
+            color = 'yellow'
         elif val == TRIED:
             color = 'black'
         elif val == DEAD_END:
@@ -124,7 +124,7 @@ def searchFrom(maze, startRow, startColumn):
     return found
 
 
-myMaze = Maze('maze.txt')
+myMaze = Maze('maze2.txt')
 myMaze.drawMaze()
 myMaze.updatePosition(myMaze.startRow,myMaze.startCol)
 
