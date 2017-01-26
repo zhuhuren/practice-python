@@ -50,6 +50,7 @@ class Maze:
         self.t.up()
         self.t.goto(x-.5,y-.5)
         self.t.color(color)
+##        self.t.pencolor('black')
         self.t.fillcolor(color)
         self.t.setheading(90)
         self.t.down()
@@ -62,7 +63,8 @@ class Maze:
     def moveTurtle(self,x,y):
         self.t.up()
         self.t.setheading(self.t.towards(x+self.xTranslate,-y+self.yTranslate))
-        self.t.goto(x+self.xTranslate,-y+self.yTranslate)
+        self.t.goto(x+self.xTranslate,-y+self.yTranslate)   
+##        self.t.dot(20, 'cyan')
 
     def dropBreadcrumb(self,color):
         self.t.dot(10,color)
@@ -124,7 +126,7 @@ def searchFrom(maze, startRow, startColumn):
     return found
 
 
-myMaze = Maze('maze.txt')
+myMaze = Maze('maze1.txt')
 myMaze.drawMaze()
 myMaze.updatePosition(myMaze.startRow,myMaze.startCol)
 
