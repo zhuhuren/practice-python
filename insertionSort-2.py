@@ -28,7 +28,7 @@ def insertSortedList(item, sortedList):
 if __name__ == '__main__':
     from random import shuffle
     from time import time
-    aList = list(range(10000))
+    aList = list(range(100000))
     shuffle(aList)
 ##    print(aList)
     t1 = time()

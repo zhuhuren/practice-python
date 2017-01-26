@@ -26,10 +26,17 @@ def selectionSort1(aList):
 if __name__ == '__main__':
     from random import shuffle
     from time import time
-    aList = list(range(10000))
+    aList = list(range(100))
     shuffle(aList)
 ##    print(aList)
     t1 = time()
     selectionSort1(aList)
     print(time() - t1)
 ##    print(aList)
+    from randWords import randwords
+    wordList = randwords(1000, 2, 8)
+    print(wordList)
+    t1 = time()
+    selectionSort(wordList)
+    print(wordList)
+    print(time() - t1)
